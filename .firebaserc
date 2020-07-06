@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "antwtm-98700": {
+      "hosting": {
+        "antWTM": [
+          "antwtm-98700"
+        ]
+      }
+    }
+  }
+}
