@@ -8,7 +8,11 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginRoutingModule } from './login-routing.module';
+import { Routes, RouterModule } from '@angular/router';
 
+const routes: Routes = [
+  { path: '', component: LoginComponent }
+];
 
 @NgModule({
   declarations: [LoginComponent],
@@ -21,7 +25,8 @@ import { LoginRoutingModule } from './login-routing.module';
     NzInputModule,
     FormsModule,
     ReactiveFormsModule,
-    LoginRoutingModule
+    LoginRoutingModule,
+    RouterModule.forChild(routes)
   ]
 })
 export class LoginModule { }

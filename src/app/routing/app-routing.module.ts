@@ -1,23 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthorizedShellGuard } from './authorized-shell.guard';
 import { AuthModule } from '../utils/auth/auth.module';
+import { AuthorizedShellGuard, UnAuthorizedShellGuard } from './guards';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/welcome' },
-  { path: 'welcome', loadChildren: () => import('../pages/welcome/welcome.module').then(m => m.WelcomeModule) },
-  { path: 'login', loadChildren: () => import('../pages/login/login.module').then(m => m.LoginModule) },
-  { path: '', loadChildren: () => import('../wrapers/unauthorized/unauthorized.module').then(m => m.UnauthorizedModule) }
+  { path: '', loadChildren: () => import('../wrapers/unauthorized/unauthorized.module').then(m => m.UnauthorizedModule), canActivateChild: [UnAuthorizedShellGuard] },
+  { path: '', loadChildren: () => import('../wrapers/authorized/authorized.module').then(m => m.AuthorizedModule), canActivateChild: [AuthorizedShellGuard] }
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes),
-    AuthModule
+    // AuthModule
   ],
   exports: [RouterModule],
   providers: [
-    AuthorizedShellGuard
+    // AuthorizedShellGuard,
+    // UnAuthorizedShellGuard
   ]
 })
 export class AppRoutingModule { }

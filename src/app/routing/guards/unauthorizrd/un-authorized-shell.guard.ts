@@ -7,7 +7,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthorizedShellGuard implements CanActivateChild {
+export class UnAuthorizedShellGuard implements CanActivateChild {
 
   constructor(private router: Router, private auth: AngularFireAuth) {
   }
@@ -18,7 +18,7 @@ export class AuthorizedShellGuard implements CanActivateChild {
       return this.auth.user.pipe(
         map(u => {
           if (u) {
-            this.router.navigate(['/']);
+            this.router.navigate(['/login']);
             return false;
           }
           else {

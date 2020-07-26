@@ -8,9 +8,6 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
   imports: [
     CommonModule,
     AngularFireAuthModule
-  ],
-  exports: [
-    // AngularFireAuthModule
   ]
 })
 export class AuthModule { }
