@@ -11,7 +11,7 @@ const routes: Routes = [
   declarations: [RegisterComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
   ]
 })
 export class RegisterModule { }

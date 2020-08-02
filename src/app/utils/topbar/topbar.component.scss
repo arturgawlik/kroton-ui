@@ -1,0 +1,15 @@
+.desktop {
+    height: 70px;
+
+    .kroton {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+    
+    ul {
+        box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+}
