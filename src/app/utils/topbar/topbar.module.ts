@@ -9,6 +9,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 // import { HomeFill } from '@ant-design/icons-angular/icons';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { DirectivesModule } from '../directives';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { DirectivesModule } from '../directives';
     RouterModule,
     NzIconModule,
     NzDropDownModule,
-    DirectivesModule
+    DirectivesModule,
+    NzButtonModule
   ],
   exports: [
     TopbarComponent

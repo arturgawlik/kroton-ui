@@ -1,30 +1,35 @@
-<!-- <div class="topbar" fxLayout="row">
-
-  <ul  nz-menu nzMode="horizontal">
-    <li nz-menu-item nzMatchRouter>
-      <a [routerLink]="['/welcome']" class="kroton">
-        Kroton
+<!-- desktop -->
+<div class="nav">
+  <ul nz-menu nzMode="horizontal">
+    <li nz-menu-item style="border-bottom: none;">
+      <a style="color:#1890ff;" nz-button nzType="link" nzSize="large" class="kroton-logo" [routerLink]="['/welcome']">
+        KROTON
       </a>
     </li>
-    <li fxHide.lt-sm  fxFlexOffset="auto" class="register" nz-menu-item nzMatchRouter>
-      <a [routerLink]="['/register']" nzType="primary">Register new account</a>
+    <li fxFlexOffset="auto" class="register" nz-menu-item nzMatchRouter>
+      <a [routerLink]="['/register']" nzType="primary">
+        <i nz-icon nzType="user-add" nzTheme="outline"></i>
+      </a>
     </li>
-    <li fxHide.lt-sm  nz-menu-item nzMatchRouter>
-      <a [routerLink]="['/login']">Login</a>
+    <li nz-menu-item nzMatchRouter>
+      <a [routerLink]="['/login']">
+        <i nz-icon nzType="login" nzTheme="outline"></i>
+      </a>
     </li>
   </ul>
+</div>
 
-
-  <a fxFlexOffset="auto"  fxHide.gt-xs  nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
-    <i style="font-size: 20px; margin: 15px; margin-right: 20px;"  nz-icon nzType="menu" nzTheme="outline"></i>
+<!-- mobile -->
+<!-- <div *appShowWhenOneOfSizes="['xs']" class="mobile">
+  <a nz-button nzType="link" nzSize="large"  class="kroton-logo"  [routerLink]="['/welcome']">
+    KROTON
+  </a>
+  <a fxFlexOffset="auto" nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
+    <i nz-icon nzType="ellipsis" nzTheme="outline" nzRotate="90"
+      style="font-size: 20px; margin: 15px; margin-right: 20px;"></i>
   </a>
   <nz-dropdown-menu #menu="nzDropdownMenu">
     <ul nz-menu>
-      <li nz-menu-item nzMatchRouter>
-        <a [routerLink]="['/welcome']" >
-          Kroton
-        </a>
-      </li>
       <li nz-menu-item nzMatchRouter>
         <a [routerLink]="['/register']" nzType="primary">Register new account</a>
       </li>
@@ -34,45 +39,3 @@
     </ul>
   </nz-dropdown-menu>
 </div> -->
-
-
-
-
-<!-- desktop -->
-<div  *appShowWhenOneOfSizes="['sm', 'md', 'lg', 'xl']" class="desktop">
-  <ul  nz-menu nzMode="horizontal">
-    <li nz-menu-item nzMatchRouter>
-      <a [routerLink]="['/welcome']" class="kroton">
-        Kroton
-      </a>
-    </li>
-    <li fxFlexOffset="auto" class="register" nz-menu-item nzMatchRouter>
-      <a [routerLink]="['/register']" nzType="primary">Register new account</a>
-    </li>
-    <li nz-menu-item nzMatchRouter>
-      <a [routerLink]="['/login']">Login</a>
-    </li>
-  </ul>
-</div>
-
-<!-- mobile -->
-<div *appShowWhenOneOfSizes="['xs']" class="mobile">
-  <a fxFlexOffset="auto"  nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
-    <i style="font-size: 20px; margin: 15px; margin-right: 20px;"  nz-icon nzType="menu" nzTheme="outline"></i>
-  </a>
-  <nz-dropdown-menu #menu="nzDropdownMenu">
-    <ul nz-menu>
-      <li nz-menu-item nzMatchRouter>
-        <a [routerLink]="['/welcome']" >
-          Kroton
-        </a>
-      </li>
-      <li nz-menu-item nzMatchRouter>
-        <a [routerLink]="['/register']" nzType="primary">Register new account</a>
-      </li>
-      <li nz-menu-item nzMatchRouter>
-        <a [routerLink]="['/login']">Login</a>
-      </li>
-    </ul>
-  </nz-dropdown-menu>
-</div>
