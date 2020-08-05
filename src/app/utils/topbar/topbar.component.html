@@ -1,21 +1,24 @@
 <!-- desktop -->
 <div class="nav">
   <ul nz-menu nzMode="horizontal">
-    <li nz-menu-item style="border-bottom: none;">
-      <a style="color:#1890ff;" nz-button nzType="link" nzSize="large" class="kroton-logo" [routerLink]="['/welcome']">
-        KROTON
-      </a>
-    </li>
-    <li fxFlexOffset="auto" class="register" nz-menu-item nzMatchRouter>
-      <a [routerLink]="['/register']" nzType="primary">
-        <i nz-icon nzType="user-add" nzTheme="outline"></i>
-      </a>
-    </li>
-    <li nz-menu-item nzMatchRouter>
-      <a [routerLink]="['/login']">
-        <i nz-icon nzType="login" nzTheme="outline"></i>
-      </a>
-    </li>
+    <div class="li-con">
+      <li nz-menu-item style="border-bottom: none;">
+        <a style="color:#1890ff;" nz-button nzType="link" nzSize="large" class="kroton-logo"
+          [routerLink]="['/welcome']">
+          KROTON
+        </a>
+      </li>
+      <li fxFlexOffset="auto" class="register" nz-menu-item nzMatchRouter>
+        <a [routerLink]="['/register']" nzType="primary">
+          <i nz-icon nzType="user-add" nzTheme="outline"></i>
+        </a>
+      </li>
+      <li nz-menu-item nzMatchRouter>
+        <a [routerLink]="['/login']">
+          <i nz-icon nzType="login" nzTheme="outline"></i>
+        </a>
+      </li>
+    </div>
   </ul>
 </div>
 

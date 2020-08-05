@@ -1,8 +1,9 @@
 .desktop {
+    max-width: 1600px;
+    margin: auto;
     .con {
         min-height: calc(100vh - 222px);
         letter-spacing: 2px;
-        text-align: justify;
 
         margin-top: 130px;
         margin-left: 10px; 
@@ -44,9 +45,5 @@
     
     h3 {
         text-align: center;
-    }
-
-    p {
-        font-size: small;
     }
 }
