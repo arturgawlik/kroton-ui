@@ -9,6 +9,8 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { NzTypographyModule } from 'ng-zorro-antd/typography';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 const routes: Routes = [
   { path: '', component: LoginComponent }
@@ -24,7 +26,9 @@ const routes: Routes = [
     NzButtonModule,
     NzInputModule,
     FlexLayoutModule,
-    NzCardModule
+    NzCardModule,
+    NzTypographyModule,
+    NzIconModule
   ]
 })
 export class LoginModule { }
