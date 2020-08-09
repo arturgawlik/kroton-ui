@@ -1,1 +1,9 @@
-<p>register works!</p>
+<div class="bg1" *appShowWhenOneOfSizes="['md', 'lg', 'xl']"></div>
+<div class="bg2" *appShowWhenOneOfSizes="['md', 'lg', 'xl']"></div>
+<div class="desktop">
+    <div class="con" fxLayout="column" fxLayoutAlign="start center">
+        <div class="form-con">
+            <app-register-form></app-register-form>
+        </div>
+    </div>
+</div>

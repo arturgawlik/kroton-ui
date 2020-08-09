@@ -1,0 +1,40 @@
+.desktop {
+    max-width: 1600px;
+    margin: auto;
+    
+    .con {
+      min-height: calc(100vh - 92px);
+    }
+  }
+  
+  .bg1 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url("../../assets/boy.svg");
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: bottom;
+    opacity: 0.2;
+  }
+
+  .bg2 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url("../../assets/girl.svg");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+    opacity: 0.2;
+  }
+  
+  .form-con {
+    width: 100%;
+    max-width: 600px;
+  }
+  

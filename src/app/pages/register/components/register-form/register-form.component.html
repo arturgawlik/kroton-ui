@@ -1,4 +1,4 @@
-<nz-card nzTitle="Login to your account.">
+<nz-card nzTitle="Register new account.">
     <form nz-form class="login-form">
         <nz-form-item>
             <nz-form-control nzErrorTip="Please input your username!">
@@ -14,14 +14,21 @@
                 </nz-input-group>
             </nz-form-control>
         </nz-form-item>
-        <button nz-button class="login-form-button login-form-margin" nzType="primary">Sign in</button>
-        <button nz-button class="login-form-button login-form-margin" nzType="default" nzDanger> 
+        <nz-form-item>
+            <nz-form-control nzErrorTip="Please repeat your Password!">
+                <nz-input-group nzPrefixIcon="lock">
+                    <input type="password" nz-input formControlName="passwordRepeat" placeholder="Repeat password" />
+                </nz-input-group>
+            </nz-form-control>
+        </nz-form-item>
+        <button nz-button class="login-form-button login-form-margin" nzType="primary">Sign up</button>
+        <!-- <button nz-button class="login-form-button login-form-margin" nzType="default" nzDanger> 
             <i nz-icon nzType="google" nzTheme="outline"></i>
             Sign in with Google
         </button>
         <div class="login-form-margin">
             <a fxFlexOffset="auto"  class="login-form-forgot">Forgot password</a>
-        </div>
+        </div> -->
         <!-- Or <a> register now! </a> -->
     </form>
 </nz-card>

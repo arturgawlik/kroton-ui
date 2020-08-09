@@ -1,6 +1,8 @@
-<div class="bg"></div>
+<div class="bg" *appShowWhenOneOfSizes="['sm', 'md', 'lg', 'xl']"></div>
 <div class="desktop">
     <div class="con" fxLayout="column" fxLayoutAlign="start center">
-        <app-login-form></app-login-form>
+        <div class="form-con">
+            <app-login-form></app-login-form>
+        </div>
     </div>
 </div>
