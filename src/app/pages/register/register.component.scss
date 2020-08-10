@@ -9,28 +9,42 @@
   
   .bg1 {
     position: absolute;
-    top: 0;
     width: 100%;
+    max-width: 1600px;
     height: 100%;
     z-index: -1;
-    background-image: url("../../assets/boy.svg");
+    background-image: url("../../assets/boy3.svg");
     background-repeat: no-repeat;
     background-position-x: left;
-    background-position-y: bottom;
+    background-position-y: center;
     opacity: 0.2;
+    margin-left: auto; 
+    margin-right: auto; 
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
   }
 
   .bg2 {
     position: absolute;
-    top: 0;
     width: 100%;
+    max-width: 1600px;
     height: 100%;
     z-index: -1;
     background-image: url("../../assets/girl.svg");
     background-repeat: no-repeat;
     background-position-x: right;
-    background-position-y: bottom;
+    background-position-y: center;
     opacity: 0.2;
+    
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
   }
   
   .form-con {
