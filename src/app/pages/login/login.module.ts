@@ -12,6 +12,8 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { DirectivesModule } from '../../utils/directives';
+import { NzNotificationModule } from 'ng-zorro-antd/notification';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '', component: LoginComponent }
@@ -30,7 +32,10 @@ const routes: Routes = [
     NzCardModule,
     NzTypographyModule,
     NzIconModule,
-    DirectivesModule
+    DirectivesModule,
+    NzNotificationModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class LoginModule { }
