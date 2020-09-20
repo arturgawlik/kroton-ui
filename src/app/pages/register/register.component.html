@@ -3,7 +3,36 @@
 <div class="desktop">
     <div class="con" fxLayout="column" fxLayoutAlign="start center">
         <div class="form-con">
-            <app-register-form></app-register-form>
+            <nz-card nzTitle="Register new account." [ngClass]="{'shake-it': cardShakeClass}">
+                <form nz-form class="login-form" [formGroup]="registerForm"  (ngSubmit)="registerFormSubmit()">
+                    <nz-alert *ngIf="allertMsg" style="margin-bottom: 20px;"  nzCloseable nzType="error" nzMessage="Error" nzShowIcon [nzMessage]="allertMsg" (nzOnClose)="allertMsg=''"></nz-alert>
+                    <nz-form-item>
+                        <nz-form-control [nzValidateStatus]="emailValidateStatus" [nzErrorTip]="emailTip"
+                        nzHasFeedback="true">
+                            <nz-input-group nzPrefixIcon="user">
+                                <input type="text" nz-input formControlName="email" placeholder="Email" />
+                            </nz-input-group>
+                        </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                        <nz-form-control [nzValidateStatus]="passwordValidateStatus" [nzErrorTip]="passwordTip"
+                        nzHasFeedback="true">
+                            <nz-input-group nzPrefixIcon="lock">
+                                <input type="password" nz-input formControlName="password" placeholder="Password" />
+                            </nz-input-group>
+                        </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                        <nz-form-control [nzValidateStatus]="passwordRepeatValidateStatus" [nzErrorTip]="passwordRepeatTip"
+                        nzHasFeedback="true">
+                            <nz-input-group nzPrefixIcon="lock">
+                                <input type="password" nz-input formControlName="passwordRepeat" placeholder="Repeat password" />
+                            </nz-input-group>
+                        </nz-form-control>
+                    </nz-form-item>
+                    <button nz-button class="login-form-button login-form-margin" nzType="primary" [nzLoading]="registerBtnLoading">Sign up</button>
+                </form>
+            </nz-card>
         </div>
     </div>
 </div>

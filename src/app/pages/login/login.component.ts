@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { Validators, FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { auth } from 'firebase/app';
 import 'firebase/auth';
-import { NotyficationsService } from 'src/app/utils/services/notyfication';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   cardShakeClass = false;
@@ -29,8 +28,8 @@ export class LoginComponent {
 
   initForm() {
     this.loginForm = this.fb.group({
-      userName: ['', { validators: [Validators.required, Validators.email], updateOn: 'blur' }],
-      password: ['', { validators: [Validators.required], updateOn: 'blur' }]
+      userName: ['', [Validators.required]],
+      password: ['', [Validators.required]]
     });
   }
 
@@ -63,7 +62,6 @@ export class LoginComponent {
     let username = this.loginForm.get('userName');
     if (!username.valid) {
       if (username.errors['required']) tip = 'Username is required!';
-      if (username.errors['email']) tip = 'This is not valid email!';
     }
     return tip;
   }
@@ -85,9 +83,9 @@ export class LoginComponent {
           this.router.navigate(['/']);
         })
         .catch(err => {
-          let msg = 'Something goes wrong... :(';
-          if (err.message)
-            msg = err.message;
+          let msg = 'Wrong username or password.';
+          // if (err.message)
+          //   msg = err.message;
           this.allertMsg = msg;
           this.cardShake();
           this.loginBtnLoading = false;
@@ -122,5 +120,4 @@ export class LoginComponent {
     this.cardShakeClass = true;
     setTimeout(() => this.cardShakeClass = false, 300);
   }
-
 }
