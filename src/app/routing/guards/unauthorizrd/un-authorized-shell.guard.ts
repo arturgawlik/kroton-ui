@@ -18,7 +18,7 @@ export class UnAuthorizedShellGuard implements CanActivateChild {
       return this.auth.user.pipe(
         map(u => {
           if (u) {
-            this.router.navigate(['/login']);
+            this.router.navigate(['/home']);
             return false;
           }
           else {

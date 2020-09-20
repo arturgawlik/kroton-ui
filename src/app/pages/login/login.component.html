@@ -2,7 +2,39 @@
 <div class="desktop">
     <div class="con" fxLayout="column" fxLayoutAlign="start center">
         <div class="form-con">
-            <app-login-form></app-login-form>
+            <nz-card nzTitle="Login to your account." class="shake" [ngClass]="{'shake': cardShakeClass}">
+                
+                <form nz-form class="login-form" [formGroup]="loginForm">
+                    <nz-alert *ngIf="allertMsg" style="margin-bottom: 20px;"  nzCloseable nzType="error" nzMessage="Error" nzShowIcon [nzMessage]="allertMsg" (nzOnClose)="allertMsg=''"></nz-alert>
+                    <nz-form-item>
+                        <nz-form-control [nzValidateStatus]="userNameValidateStatus" [nzErrorTip]="userNameTip"
+                            nzHasFeedback="true">
+                            <nz-input-group nzPrefixIcon="user">
+                                <input type="text" nz-input formControlName="userName" placeholder="Username" />
+                            </nz-input-group>
+                        </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                        <nz-form-control [nzValidateStatus]="passwordValidateStatus" [nzErrorTip]="passwordTip"
+                            nzHasFeedback="true">
+                            <nz-input-group nzPrefixIcon="lock">
+                                <input type="password" nz-input formControlName="password" placeholder="Password" />
+                            </nz-input-group>
+                        </nz-form-control>
+                    </nz-form-item>
+                    <button nz-button class="login-form-button login-form-margin" nzType="primary"
+                        (click)="loginFormSubmit()" [nzLoading]="loginBtnLoading">Sign in</button>
+                    <button nz-button class="login-form-button login-form-margin" nzType="default" nzDanger
+                        (click)="loginWithGoogleBtnClick()" [nzLoading]="loginWithGoogleBtnLoading">
+                        <i nz-icon nzType="google" nzTheme="outline"></i>
+                        Sign in with Google
+                    </button>
+                    <div class="login-form-margin">
+                        <a fxFlexOffset="auto" class="login-form-forgot">Forgot password</a>
+                    </div>
+                    <!-- Or <a> register now! </a> -->
+                </form>
+            </nz-card>
         </div>
     </div>
 </div>
