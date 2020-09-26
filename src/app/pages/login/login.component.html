@@ -2,7 +2,7 @@
 <div class="desktop">
     <div class="con" fxLayout="column" fxLayoutAlign="start center">
         <div class="form-con">
-            <nz-card nzTitle="Login to your account." class="shake" [ngClass]="{'shake-it': cardShakeClass}">
+            <nz-card nzTitle="Login to your account." class="shake" [@shake-it]="shakeCard">
                 
                 <form nz-form class="login-form" [formGroup]="loginForm" (ngSubmit)="loginFormSubmit()">
                     <nz-alert *ngIf="allertMsg" style="margin-bottom: 20px;"  nzCloseable nzType="error" nzMessage="Error" nzShowIcon [nzMessage]="allertMsg" (nzOnClose)="allertMsg=''"></nz-alert>
@@ -24,7 +24,7 @@
                     </nz-form-item>
                     <button type="submit" nz-button class="login-form-button login-form-margin" nzType="primary"
                          [nzLoading]="loginBtnLoading">Sign in</button>
-                    <button nz-button class="login-form-button login-form-margin" nzType="default" nzDanger
+                    <button type="button" nz-button class="login-form-button login-form-margin" nzType="default" nzDanger
                         (click)="loginWithGoogleBtnClick()" [nzLoading]="loginWithGoogleBtnLoading">
                         <i nz-icon nzType="google" nzTheme="outline"></i>
                         Sign in with Google

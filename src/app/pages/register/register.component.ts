@@ -1,17 +1,26 @@
+import { transition, trigger, useAnimation } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { shakeItAnimation } from 'src/app/utils/animations';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
+  animations: [
+    trigger('shake-it', [
+      transition('* => *', [
+        useAnimation(shakeItAnimation)
+      ])
+    ])
+  ]
 })
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
-  cardShakeClass = false;
+  shakeCard = false;
   registerBtnLoading = false;
   allertMsg = '';
 
@@ -100,8 +109,7 @@ export class RegisterComponent implements OnInit {
   }
 
   cardShake() {
-    this.cardShakeClass = true;
-    setTimeout(() => this.cardShakeClass = false, 300);
+    this.shakeCard = !this.shakeCard;
   }
 
   confirmationValidator = (control: FormControl): { [s: string]: boolean } => {

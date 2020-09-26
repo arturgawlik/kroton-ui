@@ -3,7 +3,7 @@
 <div class="desktop">
     <div class="con" fxLayout="column" fxLayoutAlign="start center">
         <div class="form-con">
-            <nz-card nzTitle="Register new account." [ngClass]="{'shake-it': cardShakeClass}">
+            <nz-card nzTitle="Register new account." [@shake-it]="shakeCard">
                 <form nz-form class="login-form" [formGroup]="registerForm"  (ngSubmit)="registerFormSubmit()">
                     <nz-alert *ngIf="allertMsg" style="margin-bottom: 20px;"  nzCloseable nzType="error" nzMessage="Error" nzShowIcon [nzMessage]="allertMsg" (nzOnClose)="allertMsg=''"></nz-alert>
                     <nz-form-item>

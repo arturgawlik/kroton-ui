@@ -4,16 +4,25 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { auth } from 'firebase/app';
 import 'firebase/auth';
+import { transition, trigger, useAnimation } from '@angular/animations';
+import { shakeItAnimation } from '../../utils/animations';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  animations: [
+    trigger('shake-it', [
+      transition('* => *', [
+        useAnimation(shakeItAnimation)
+      ])
+    ])
+  ]
 })
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-  cardShakeClass = false;
+  shakeCard = false;
   loginBtnLoading = false;
   loginWithGoogleBtnLoading = false;
   allertMsg = '';
@@ -117,7 +126,6 @@ export class LoginComponent implements OnInit {
   }
 
   cardShake() {
-    this.cardShakeClass = true;
-    setTimeout(() => this.cardShakeClass = false, 300);
+    this.shakeCard = !this.shakeCard;
   }
 }
