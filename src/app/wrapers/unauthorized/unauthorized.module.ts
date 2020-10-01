@@ -17,4 +17,5 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FooterModule
   ]
 })
-export class UnauthorizedModule { }
+export class UnauthorizedModule {
+}

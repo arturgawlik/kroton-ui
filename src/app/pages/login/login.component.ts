@@ -4,7 +4,6 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { auth } from 'firebase/app';
 import 'firebase/auth';
-import { transition, trigger, useAnimation } from '@angular/animations';
 import { shakeItAnimation } from '../../utils/animations';
 
 @Component({
@@ -12,11 +11,7 @@ import { shakeItAnimation } from '../../utils/animations';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
   animations: [
-    trigger('shake-it', [
-      transition('* => *', [
-        useAnimation(shakeItAnimation)
-      ])
-    ])
+    shakeItAnimation
   ]
 })
 export class LoginComponent implements OnInit {

@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { fader, routeAnimation } from 'src/app/utils/animations';
 
 @Component({
   selector: 'app-unauthorized',
   templateUrl: './unauthorized.component.html',
-  styleUrls: ['./unauthorized.component.scss']
+  styleUrls: ['./unauthorized.component.scss'],
+  animations:[
+    routeAnimation
+  ]
 })
 export class UnauthorizedComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  prepareRoute(outlet: RouterOutlet) {
+    // needs to return 'key' that's changing with route
+    return outlet.activatedRoute.component;
   }
 
 }

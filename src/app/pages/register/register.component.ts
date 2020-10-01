@@ -1,4 +1,3 @@
-import { transition, trigger, useAnimation } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
@@ -10,11 +9,7 @@ import { shakeItAnimation } from 'src/app/utils/animations';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
   animations: [
-    trigger('shake-it', [
-      transition('* => *', [
-        useAnimation(shakeItAnimation)
-      ])
-    ])
+    shakeItAnimation
   ]
 })
 export class RegisterComponent implements OnInit {

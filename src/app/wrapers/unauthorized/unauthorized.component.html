@@ -1,5 +1,5 @@
 <app-topbar></app-topbar>
-<div>
-    <router-outlet></router-outlet>
+<div [@route]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
 </div>
 <app-footer></app-footer>
