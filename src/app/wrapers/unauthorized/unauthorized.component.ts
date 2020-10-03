@@ -10,7 +10,7 @@ import { fader, routeAnimation } from 'src/app/utils/animations';
     routeAnimation
   ]
 })
-export class UnauthorizedComponent implements OnInit {
+export class UnauthorizedComponent {
 
   prepareRoute(outlet: RouterOutlet) {
     // needs to return 'key' that's changing with route
