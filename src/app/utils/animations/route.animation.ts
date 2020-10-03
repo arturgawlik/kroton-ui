@@ -12,7 +12,7 @@ export const routeAnimation = trigger('route', [
     ]),
     query(':enter', [
       style({height: 0}),
-      animate('2000ms', style({ opacity: 1 }))
+      animate('300ms', style({ opacity: 1 }))
     ])
   ])
 ]);
