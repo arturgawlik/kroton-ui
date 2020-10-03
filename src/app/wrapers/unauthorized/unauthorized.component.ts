@@ -13,7 +13,7 @@ import { fader, routeAnimation } from 'src/app/utils/animations';
 export class UnauthorizedComponent {
 
   prepareRoute(outlet: RouterOutlet) {
-    // needs to return 'key' that's changing with route
+    // needs to return 'key' that's changing with route to fire animation
     return outlet.activatedRoute.component;
   }
 
