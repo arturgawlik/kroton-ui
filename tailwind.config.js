@@ -12,7 +12,11 @@ module.exports = (isProd) => ({
       extend: {},
     },
     variants: {
-      extend: {},
+      extend: {
+        backgroundColor: ['active'],
+        outline: ['focus'],
+        boxShadow: ['active'],
+      }
     },
     plugins: [],
 });

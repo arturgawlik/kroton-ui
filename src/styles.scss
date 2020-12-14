@@ -2,3 +2,39 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.btn {
+  @apply tracking-wider font-light capitalize shadow rounded-sm p-1 px-4 m-1 active:shadow-none focus:outline-none;
+}
+
+.btn-blue {
+  @apply bg-blue-300 active:bg-blue-500 hover:bg-blue-400;
+}
+
+.btn-red {
+  @apply bg-red-300 active:bg-red-500 hover:bg-red-400;
+}
+
+.btn-yellow {
+  @apply bg-yellow-300 active:bg-yellow-500 hover:bg-yellow-400;
+}
+
+.btn-green {
+  @apply bg-green-300 active:bg-green-500 hover:bg-green-400;
+}
+
+.btn-pink {
+  @apply bg-pink-300 active:bg-pink-500 hover:bg-pink-400;
+}
+
+.btn-gray {
+  @apply bg-gray-300 active:bg-gray-500 hover:bg-gray-400;
+}
+
+.btn-indigo {
+  @apply bg-indigo-300 active:bg-indigo-500 hover:bg-indigo-400;
+}
+
+.btn-purple {
+  @apply bg-purple-300 active:bg-purple-500 hover:bg-purple-400;
+}
