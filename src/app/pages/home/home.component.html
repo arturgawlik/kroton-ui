@@ -1,9 +1,24 @@
-<div class="flex justify-end">
-  <h1 class="text-6xl tracking-widest m-3 upper border-b font-thin">
+<div class="flex border-b shadow-sm">
+  <h1 class="text-2xl tracking-widest m-2 p-1 select-none cursor-pointer upper font-thin">
     kroton
   </h1>
-  <div class="ml-auto m-3">
-    <button class="btn btn-gray" (click)="logout()">sign out</button>
+  <div class="m-2 ml-auto">
+    <button nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu" class="active:bg-gray-200 hover:bg-gray-100 text-lg border focus:outline-none rounded-full p-3 flex items-center justify-center"><i nz-icon nzType="user" nzTheme="outline"></i></button>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+      <div nz-menu class="">
+        <div nz-menu-item>
+          <button (click)="logout()" class="px-2 w-28 focus:outline-none tracking-wide flex align-center">
+            <span class="capitalize tracking-widest">settings</span>
+            <i class="my-auto ml-auto" nz-icon nzType="setting" nzTheme="outline"></i>
+          </button>
+        </div>
+        <div nz-menu-item>
+          <button (click)="logout()" class="px-2 w-28 focus:outline-none tracking-wide flex align-center">
+            <span class="capitalize tracking-widest">sign out</span>
+            <i class="my-auto ml-auto" nz-icon nzType="logout" nzTheme="outline"></i>
+          </button>
+        </div>
+      </div>
+    </nz-dropdown-menu>
   </div>
 </div>
-

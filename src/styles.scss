@@ -4,7 +4,7 @@
 @import 'tailwindcss/utilities';
 
 .btn {
-  @apply tracking-wider font-light capitalize shadow rounded-sm p-1 px-4 m-1 active:shadow-none focus:outline-none;
+  @apply tracking-wider capitalize shadow rounded-sm p-1 px-4 m-1 active:shadow-none focus:outline-none;
 }
 
 .btn-blue {
